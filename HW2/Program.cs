@@ -21,11 +21,11 @@ namespace HW2
 
     class MainClass
     {
-        const string exprPath = "../../../expressions.txt";
-        const string exprAnswPath = "../../../answers.txt";
-        const string exprChecker = "../../../expressions_checker.txt";
-        const string resultPath = "../../../results.txt";
-        const string resultErrors = "../../../results_errors.txt";
+        const string exprPath = "expressions.txt";
+        const string exprAnswPath = "answers.txt";
+        const string exprChecker = "expressions_checker.txt";
+        const string resultPath = "results.txt";
+        const string resultErrors = "results_errors.txt";
 
         static Dictionary<String, MathOperation> operations;
         static MainClass()
@@ -63,6 +63,7 @@ namespace HW2
             {
                 Calculator.ErrorNotification += ConsoleErrorHandler;
                 Calculator.ErrorNotification += ResultErrorHandler;
+
                 //Вычисление результата арифметический выражений.
                 //Console.WriteLine("Поиск решения начался...");
                 //FindAnswer();
@@ -83,7 +84,7 @@ namespace HW2
             {
                 File.AppendAllText(resultErrors, message + Environment.NewLine);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Console.WriteLine("Ошибка при работе с записи ошибок в файл");
             }
