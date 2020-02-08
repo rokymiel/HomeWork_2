@@ -8,11 +8,18 @@ namespace HW2
     delegate double MathOperation(double a, double b);
     class Calculator
     {
+        /// <summary>
+        /// Произвести вычисление.
+        /// </summary>
         public static double Calculate(MathOperation operation, double x, double y)
         {
             return operation(x, y);
         }
         public static event ErrorNotificationType ErrorNotification;
+        /// <summary>
+        /// Запуск события по выводу ошибок.
+        /// </summary>
+        /// <param name="m"></param>
         public static void Error(string m)
         {
             ErrorNotification(m);
@@ -77,6 +84,10 @@ namespace HW2
 
 
         }
+        /// <summary>
+        /// Запись ошибок в файл.
+        /// </summary>
+        /// <param name="message">Сообщение.</param>
         static void ResultErrorHandler(string message)
         {
             try
@@ -88,6 +99,10 @@ namespace HW2
                 Console.WriteLine("Ошибка при работе с записи ошибок в файл");
             }
         }
+        /// <summary>
+        /// Вывод ошибок в консоль.
+        /// </summary>
+        /// <param name="message">Сообщение.</param>
         static void ConsoleErrorHandler(string message)
         {
             Console.WriteLine($"Error: {message} Time of error:{DateTime.Now}");
