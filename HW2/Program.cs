@@ -63,16 +63,15 @@ namespace HW2
             {
                 Calculator.ErrorNotification += ConsoleErrorHandler;
                 Calculator.ErrorNotification += ResultErrorHandler;
-
                 //Вычисление результата арифметический выражений.
                 //Console.WriteLine("Поиск решения начался...");
                 //FindAnswer();
                 //Console.WriteLine("Поиск решения закончился");
 
                 // Проверка ответов в файлах.
-                Console.WriteLine("Проверка ответов началась...");
-                CheckAnswers();
-                Console.WriteLine("ПРоверка ответов закончилась");
+                //Console.WriteLine("Проверка ответов началась...");
+                //CheckAnswers();
+                //Console.WriteLine("ПРоверка ответов закончилась");
             }
             catch (Exception ex) { Calculator.Error(ex.Message); }
 
@@ -84,7 +83,7 @@ namespace HW2
             {
                 File.AppendAllText(resultErrors, message + Environment.NewLine);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Ошибка при работе с записи ошибок в файл");
             }
