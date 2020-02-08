@@ -21,11 +21,11 @@ namespace HW2
 
     class MainClass
     {
-        const string exprPath = "expressions.txt";
-        const string exprAnswPath = "answers.txt";
-        const string exprChecker = "expressions_checker.txt";
-        const string resultPath = "results.txt";
-        const string resultErrors = "results_errors.txt";
+        const string exprPath = "../../../expressions.txt";
+        const string exprAnswPath = "../../../answers.txt";
+        const string exprChecker = "../../../expressions_checker.txt";
+        const string resultPath = "../../../results.txt";
+        const string resultErrors = "../../../results_errors.txt";
 
         static Dictionary<String, MathOperation> operations;
         static MainClass()
@@ -69,9 +69,9 @@ namespace HW2
                 //Console.WriteLine("Поиск решения закончился");
 
                 // Проверка ответов в файлах.
-                //Console.WriteLine("Проверка ответов началась...");
-                //CheckAnswers();
-                //Console.WriteLine("ПРоверка ответов закончилась");
+                Console.WriteLine("Проверка ответов началась...");
+                CheckAnswers();
+                Console.WriteLine("ПРоверка ответов закончилась");
             }
             catch (Exception ex) { Calculator.Error(ex.Message); }
 
